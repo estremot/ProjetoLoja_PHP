@@ -1,0 +1,14 @@
+create database loja;
+
+create table marca(
+	codmarca serial primary key,
+	nomemarca varchar(80) not null unique
+);
+
+create table produtos( 
+codproduto integer AUTO_INCREMENT PRIMARY key,
+nomeproduto varchar(80) not null unique, 
+preco numeric(10,2) not null,
+descricao text not null,
+codmarca_fk integer references marca(codmarca)
+ );
